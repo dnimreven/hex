@@ -1,0 +1,39 @@
+{
+  "name": "hex",
+  "version": "0.1.0",
+  "description": "Hex helpers",
+  "main": "index.js",
+  "scripts": {
+    "preversion": "npm run lint",
+    "prepublishOnly": "npm test & npm run lint",
+    "prepare": "npm run build",
+    "build": "tsc",
+    "lint": "npx eslint .",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "test": "jest --config jestconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnimreven/hex.git"
+  },
+  "keywords": ["hex"],
+  "author": "dnimreven",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnimreven/hex/issues"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "homepage": "https://github.com/dnimreven/hex#readme",
+  "devDependencies": {
+    "@types/jest": "^29.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.1",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.9.4"
+  }
+}
