@@ -1,6 +1,6 @@
 {
-  "name": "hex",
-  "version": "0.1.0",
+  "name": "@dnimreven/hex",
+  "version": "0.1.1",
   "description": "Hex helpers",
   "main": "index.js",
   "scripts": {
