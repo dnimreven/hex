@@ -138,6 +138,26 @@ export class Hex {
   }
 
   /**
+   * Get Hexes on a line between `this` and `other`
+   * @param other
+   */
+  public lineTo(other: Hex): Hex[] {
+    const distance = this.distanceTo(other);
+    const dx = (other.x - this.x) / distance;
+    const dy = (other.y - this.y) / distance;
+
+    const result = [];
+
+    for (let i = 0; i < distance; i++) {
+      result.push(Hex.at(this.x + dx * i, this.y + dy * i));
+    }
+
+    result.push(other);
+
+    return result;
+  }
+
+  /**
    * Get Hex coordinates of given cartesian point
    * @param x horizontal position component
    * @param y vertical position component
@@ -157,25 +177,5 @@ export class Hex {
       Math.round((b - a) / 3),
       Math.round((c - b) / 3),
     );
-  }
-
-  /**
-   * Get Hexes on a line between `this` and `other`
-   * @param other
-   */
-  public lineTo(other: Hex): Hex[] {
-    const distance = this.distanceTo(other);
-    const dx = (other.x - this.x) / distance;
-    const dy = (other.y - this.y) / distance;
-
-    const result = [];
-
-    for (let i = 0; i < distance; i++) {
-      result.push(Hex.at(this.x + dx * i, this.y + dy * i));
-    }
-
-    result.push(other);
-
-    return result;
   }
 }
